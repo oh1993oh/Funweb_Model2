@@ -18,4 +18,16 @@ public class BoardDAO {
 		this.con = con;
 	}
 	
+	public boolean isBoardArticleWriter(int board_num, int board_pass) {
+		
+		return isArticleWriter;
+	}
+	
+	public int deleteArticle(int board_num) {
+		
+		return deleteArticle;
+	}
+	
 }
+
+
