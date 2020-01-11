@@ -5,17 +5,16 @@ import static db.jdbcUtil.*;
 import java.sql.Connection;
 
 import dao.BoardDAO;
-import vo.BoardBean;
 
 public class BoardDeleteProService {
 
-	public boolean isAriticleWriter(int board_num, String parameter) {
+	public boolean isAriticleWriter(int board_num, String board_pass) {
 		
 		Connection con = getConnection();
 		BoardDAO boardDAO = BoardDAO.getInstance();
 		boardDAO.setConnection(con);
 		
-		boolean isArticleWriter = boardDAO.isBoardArticleWriter(board_num,board_pass);
+		boolean isArticleWriter = boardDAO.isBoardArticleWriter(board_num, board_pass);
 		
 		close(con);
 		
