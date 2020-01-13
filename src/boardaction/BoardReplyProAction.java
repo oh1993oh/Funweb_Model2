@@ -18,14 +18,14 @@ public class BoardReplyProAction implements Action{
 		String nowPage = request.getParameter("page");
 		
 		BoardBean article = new BoardBean();
-		article.setBoard_num(Integer.parseInt(request.getParameter("board_num")));
-		article.setBoard_name(request.getParameter("board_name"));
-		article.setBoard_pass(request.getParameter("board_pass"));
-		article.setBoard_subject(request.getParameter("board_subject"));
-		article.setBoard_content(request.getParameter("board_content"));
-		article.setBoard_re_ref(Integer.parseInt(request.getParameter("board_re_ref")));
-		article.setBoard_re_lev(Integer.parseInt(request.getParameter("board_re_lev")));
-		article.setBoard_re_seq(Integer.parseInt(request.getParameter("board_re_seq")));
+		article.setboard_num(Integer.parseInt(request.getParameter("board_num")));
+		article.setboard_name(request.getParameter("board_name"));
+		article.setboard_pass(request.getParameter("board_pass"));
+		article.setboard_subject(request.getParameter("board_subject"));
+		article.setboard_content(request.getParameter("board_content"));
+		article.setboard_re_ref(Integer.parseInt(request.getParameter("board_re_ref")));
+		article.setboard_re_lev(Integer.parseInt(request.getParameter("board_re_lev")));
+		article.setboard_re_seq(Integer.parseInt(request.getParameter("board_re_seq")));
 		
 		BoardReplyProService boardReplyProService = new BoardReplyProService();
 		boolean isReplySuccess = boardReplyProService.replyArticle(article);

@@ -82,22 +82,22 @@
 				for(int i = 0; i < articleList.size(); i++) {
 				%>
 				<tr>
-					<td align="center"><%=articleList.get(i).getBoard_num() %></td>
+					<td align="center"><%=articleList.get(i).getboard_num() %></td>
 					<td>
-					<%if(articleList.get(i).getBoard_re_lev() != 0) { %>
-							<%for(int j = 0; j <= articleList.get(i).getBoard_re_lev() * 2; j++) { %>
+					<%if(articleList.get(i).getboard_re_lev() != 0) { %>
+							<%for(int j = 0; j <= articleList.get(i).getboard_re_lev() * 2; j++) { %>
 									&nbsp;
 							<%} %>
 							▶
 					<%} %>
 						&nbsp;&nbsp;
-						<a href="BoardDetail.bo?board_num=<%=articleList.get(i).getBoard_num() %>&page=<%=nowPage %>">
-						<%=articleList.get(i).getBoard_subject() %>
+						<a href="BoardDetail.bo?board_num=<%=articleList.get(i).getboard_num() %>&page=<%=nowPage %>">
+						<%=articleList.get(i).getboard_subject() %>
 						</a>
 					</td>
-					<td align="center"><%=articleList.get(i).getBoard_name() %></td>
-					<td align="center"><%=articleList.get(i).getBoard_date() %></td>
-					<td align="center"><%=articleList.get(i).getBoard_readcount() %></td>
+					<td align="center"><%=articleList.get(i).getboard_name() %></td>
+					<td align="center"><%=articleList.get(i).getboard_date() %></td>
+					<td align="center"><%=articleList.get(i).getboard_readcount() %></td>
 				</tr>
 				
 				<%}%>

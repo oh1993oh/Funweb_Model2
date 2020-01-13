@@ -35,11 +35,11 @@ public class BoardWriteProAction implements Action {
 		
 		
 		boardBean = new BoardBean();
-		boardBean.setBoard_name(multi.getParameter("board_name"));
-		boardBean.setBoard_pass(multi.getParameter("board_pass"));
-		boardBean.setBoard_subject(multi.getParameter("board_subject"));
-		boardBean.setBoard_content(multi.getParameter("board_content"));
-		boardBean.setBoard_file(multi.getOriginalFileName((String)multi.getFileNames().nextElement()));
+		boardBean.setboard_name(multi.getParameter("board_name"));
+		boardBean.setboard_pass(multi.getParameter("board_pass"));
+		boardBean.setboard_subject(multi.getParameter("board_subject"));
+		boardBean.setboard_content(multi.getParameter("board_content"));
+		boardBean.setboard_file(multi.getOriginalFileName((String)multi.getFileNames().nextElement()));
 		
 		BoardWriteProService boardWriteProService = new BoardWriteProService();
 		boolean isWriteSuccess = boardWriteProService.registArticle(boardBean);

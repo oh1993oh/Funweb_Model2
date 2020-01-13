@@ -31,10 +31,10 @@ public class BoardModifyProAction implements Action{
 			out.println("</script>");
 		}else {
 			BoardBean article = new BoardBean();
-			article.setBoard_num(board_num);
-			article.setBoard_name(request.getParameter("board_name"));
-			article.setBoard_subject(request.getParameter("board_subject"));
-			article.setBoard_content(request.getParameter("board_content"));
+			article.setboard_num(board_num);
+			article.setboard_name(request.getParameter("board_name"));
+			article.setboard_subject(request.getParameter("board_subject"));
+			article.setboard_content(request.getParameter("board_content"));
 		
 			boolean isModifySuccess = boardModifyProService.modifyArticle(article);
 			

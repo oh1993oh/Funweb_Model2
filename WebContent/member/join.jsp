@@ -7,7 +7,27 @@
 <title>Insert title here</title>
 <link href="./css/default.css" rel="stylesheet" type="text/css">
 <link href="./css/subpage.css" rel="stylesheet" type="text/css">
+<script src="js/jquery-3.4.1.js"></script>
+<script type="text/javascript">
 
+var idcheckResult = false, passcheckResult = false;
+var passcheckResult2 = false, namecheckResult = false;
+var emailcheckResult = false, numbercheckResult = false;
+
+function changeDomain(domain) {
+	// SELECT-OPTION 태그에서 선택된 항목을 email2 필드에 표시
+	document.joinForm.email2.value = domain.value;
+}
+function CheckSubmit() {
+	if (document.joinForm.email1.value == ""
+			&& document.joinForm.email2.value == "") {
+		document.joinForm.email1.focus();
+		return;
+	} else {
+		emailcheckResult = true;
+	}
+}
+</script>
 </head>
 <body>
 	<div id="wrap">
@@ -49,7 +69,7 @@
 		<!-- 본문내용 -->
 		<article>
 			<h1>Join Us</h1>
-			<form action="MemberJoinPro.me" id="join" method="post">
+			<form action="MemberJoinPro.me" id="join" method="post" name="joinForm">
 				<fieldset>
 					<legend>Basic Info</legend>
 					<label>User ID</label> <input type="text" name="id" class="id"

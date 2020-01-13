@@ -52,13 +52,13 @@
 	<section id="modifyForm">
 		<h2>글 수정하기<%=nowPage %></h2>
 		<form action="BoardModifyPro.bo" method="post" name="modifyForm">
-			<input type="hidden" name="board_num" value="<%=article.getBoard_num() %>" />
+			<input type="hidden" name="board_num" value="<%=article.getboard_num() %>" />
 			<input type="hidden" name="page" value="<%=nowPage %>" />
 			<table>
 				<tr>
 					<td class="td_left"><label for="board_name">글쓴이</label></td>
 					<td class="td_right">
-						<input type="text" name="board_name" required="required" value=<%=article.getBoard_name() %> />
+						<input type="text" name="board_name" required="required" value=<%=article.getboard_name() %> />
 					</td>
 				</tr>
 				<tr>
@@ -70,14 +70,14 @@
 				<tr>
 					<td class="td_left"><label for="board_subject">제목</label></td>
 					<td class="td_right">
-						<input type="text" name="board_subject" required="required" value=<%=article.getBoard_subject() %> />
+						<input type="text" name="board_subject" required="required" value=<%=article.getboard_subject() %> />
 					</td>
 				</tr>
 				<tr>
 					<td class="td_left"><label for="board_content">내용</label></td>
 					<td class="td_right">
 						<textarea id="board_content" name="board_content" cols="40" rows="15" 
-									required="required"><%=article.getBoard_content() %></textarea>
+									required="required"><%=article.getboard_content() %></textarea>
 					</td>
 				</tr>
 			</table>

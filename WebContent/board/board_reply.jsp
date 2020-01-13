@@ -55,10 +55,10 @@
 		<form action="BoardReplyPro.bo" method="post" name="replyForm">
 			<!-- 답변 글 작성에 필요한 게시물 정보 중 입력받지 않는 정보도 함께 전달 -->
 			<input type="hidden" name="page" value="<%=nowPage %>" />
-			<input type="hidden" name="board_num" value="<%=article.getBoard_num() %>" />
-			<input type="hidden" name="board_re_ref" value="<%=article.getBoard_re_ref() %>" />
-			<input type="hidden" name="board_re_lev" value="<%=article.getBoard_re_lev() %>" />
-			<input type="hidden" name="board_re_seq" value="<%=article.getBoard_re_seq() %>" />
+			<input type="hidden" name="board_num" value="<%=article.getboard_num() %>" />
+			<input type="hidden" name="board_re_ref" value="<%=article.getboard_re_ref() %>" />
+			<input type="hidden" name="board_re_lev" value="<%=article.getboard_re_lev() %>" />
+			<input type="hidden" name="board_re_seq" value="<%=article.getboard_re_seq() %>" />
 			<table>
 				<tr>
 					<td class="td_left"><label for="board_name">글쓴이</label></td>
@@ -77,7 +77,7 @@
 					<td class="td_right">
 						<textarea id="board_content" name="board_content" cols="40" rows="15" required="required">
 						------------- 원본 글 내용 -------------
-							<%=article.getBoard_content() %>
+							<%=article.getboard_content() %>
 						</textarea>
 					</td>
 				</tr>

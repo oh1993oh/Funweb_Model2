@@ -4,81 +4,81 @@ import java.sql.Date;
 
 public class BoardBean {
 	
-	private int Board_num;
+	private int board_num;
 	private String board_name;
 	private String board_pass;
 	private String board_subject;
 	private String board_content;
 	private String board_file;
-	private int Board_re_ref;
-	private int Board_re_lev;
-	private int Board_re_seq;
-	private int Board_readcount;
+	private int board_re_ref;
+	private int board_re_lev;
+	private int board_re_seq;
+	private int board_readcount;
 	private Date board_date;
-	public int getBoard_num() {
-		return Board_num;
+	public int getboard_num() {
+		return board_num;
 	}
-	public void setBoard_num(int board_num) {
-		Board_num = board_num;
+	public void setboard_num(int board_num) {
+		this.board_num = board_num;
 	}
-	public String getBoard_name() {
+	public String getboard_name() {
 		return board_name;
 	}
-	public void setBoard_name(String board_name) {
+	public void setboard_name(String board_name) {
 		this.board_name = board_name;
 	}
-	public String getBoard_pass() {
+	public String getboard_pass() {
 		return board_pass;
 	}
-	public void setBoard_pass(String board_pass) {
+	public void setboard_pass(String board_pass) {
 		this.board_pass = board_pass;
 	}
-	public String getBoard_subject() {
+	public String getboard_subject() {
 		return board_subject;
 	}
-	public void setBoard_subject(String board_subject) {
+	public void setboard_subject(String board_subject) {
 		this.board_subject = board_subject;
 	}
-	public String getBoard_content() {
+	public String getboard_content() {
 		return board_content;
 	}
-	public void setBoard_content(String board_content) {
+	public void setboard_content(String board_content) {
 		this.board_content = board_content;
 	}
-	public String getBoard_file() {
+	public String getboard_file() {
 		return board_file;
 	}
-	public void setBoard_file(String board_file) {
+	public void setboard_file(String board_file) {
 		this.board_file = board_file;
 	}
-	public int getBoard_re_ref() {
-		return Board_re_ref;
+	public int getboard_re_ref() {
+		return board_re_ref;
 	}
-	public void setBoard_re_ref(int board_re_ref) {
-		Board_re_ref = board_re_ref;
+	public void setboard_re_ref(int board_re_ref) {
+		this.board_re_ref = board_re_ref;
 	}
-	public int getBoard_re_lev() {
-		return Board_re_lev;
+	public int getboard_re_lev() {
+		return board_re_lev;
 	}
-	public void setBoard_re_lev(int board_re_lev) {
-		Board_re_lev = board_re_lev;
+	public void setboard_re_lev(int board_re_lev) {
+		this.board_re_lev = board_re_lev;
 	}
-	public int getBoard_re_seq() {
-		return Board_re_seq;
+	public int getboard_re_seq() {
+		return board_re_seq;
 	}
-	public void setBoard_re_seq(int board_re_seq) {
-		Board_re_seq = board_re_seq;
+	public void setboard_re_seq(int board_re_seq) {
+		this.board_re_seq = board_re_seq;
 	}
-	public int getBoard_readcount() {
-		return Board_readcount;
+	public int getboard_readcount() {
+		return board_readcount;
 	}
-	public void setBoard_readcount(int board_readcount) {
-		Board_readcount = board_readcount;
+	public void setboard_readcount(int board_readcount) {
+		this.board_readcount = board_readcount;
 	}
-	public Date getBoard_date() {
+	public Date getboard_date() {
 		return board_date;
 	}
-	public void setBoard_date(Date board_date) {
+	public void setboard_date(Date board_date) {
 		this.board_date = board_date;
 	}
 	

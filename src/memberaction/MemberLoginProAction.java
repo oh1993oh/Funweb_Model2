@@ -17,7 +17,7 @@ public class MemberLoginProAction implements Action{
 		ActionForward forward = null;
 		
 		String id = request.getParameter("id");
-		String passwd = request.getParameter("passwd");
+		String passwd = request.getParameter("pass");
 		System.out.println(id + ", " + passwd);
 		
 		MemberLoginProService memberLoginProService = new MemberLoginProService();

@@ -53,22 +53,22 @@
 	<section id = "articleForm">
 		<h2>글 상세내용 보기</h2>
 		<section id = "basicInfoArea">
-			제목 : <%= article.getBoard_subject() %><br>
+			제목 : <%= article.getboard_subject() %><br>
 			첨부파일 : 
 			<%
-				if(article.getBoard_file() != null){
-					%><a href='file_down?downFile=<%=article.getBoard_file() %>'></a>
+				if(article.getboard_file() != null){
+					%><a href='file_down?downFile=<%=article.getboard_file() %>'></a>
 				<%}
 			%>
 		</section>
 		<section id = "articleContentArea">
-			<%= article.getBoard_content() %>
+			<%= article.getboard_content() %>
 		</section>
 	</section>
 	<section id = "conmmandList">
-		<input type = "button" value = "답변" onclick="location.href='BoardReplyForm.bo?board_num<%=article.getBoard_num() %>&page=<%=nowPage %>'">
-		<input type = "button" value = "수정" onclick="location.href='BoardModifyForm.bo?board_num<%=article.getBoard_num() %>&page=<%=nowPage %>'">
-		<input type = "button" value = "삭제" onclick="location.href='BoardDeleteForm.bo?board_num<%=article.getBoard_num() %>&page=<%=nowPage %>'">
+		<input type = "button" value = "답변" onclick="location.href='BoardReplyForm.bo?board_num<%=article.getboard_num() %>&page=<%=nowPage %>'">
+		<input type = "button" value = "수정" onclick="location.href='BoardModifyForm.bo?board_num<%=article.getboard_num() %>&page=<%=nowPage %>'">
+		<input type = "button" value = "삭제" onclick="location.href='BoardDeleteForm.bo?board_num<%=article.getboard_num() %>&page=<%=nowPage %>'">
 		<input type = "button" value = "목록" onclick="location.href='Boardlistbo?page=<%=nowPage %>'">
 	</section>
 	<section id = "commandList">
@@ -88,7 +88,7 @@
 			5점<input type = "radio" name = "star" value = "5">
 		
 			<textarea rows = "5" cols = "30" name = "comment"></textarea>
-			<input type = "hidden" name = "board_num" value = <%=article.getBoard_num() %>>
+			<input type = "hidden" name = "board_num" value = <%=article.getboard_num() %>>
 			아이디 : <input type = "text" name = "member_id">
 			<input type = "hidden" name = "page" value = <%=nowPage %>>
 			<input type = "submit" value = "댓글등록">

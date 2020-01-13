@@ -37,7 +37,7 @@ public class BoardFrontController extends HttpServlet {
 		// 입력받은 서블릿 주소 매핑
 		if (command.equals("/BoardMain.bo")) {
 			forward = new ActionForward();
-			forward.setPath("/index.jsp");
+			forward.setPath("/notice.jsp");
 		} else if (command.equals("/BoardWriteForm.bo")) {
 			forward = new ActionForward();
 			forward.setPath("/board/board_write.jsp");
@@ -73,7 +73,15 @@ public class BoardFrontController extends HttpServlet {
 			} catch (Exception e) {
 				System.out.println("BoardFrontController - BoardModifyPro.bo - 오류" + e.getMessage());
 			}
-		} else if (command.equals("/BoardDeleteForm.bo")) {
+		} else if(command.equals("/BoardList.bo")) {
+			// BoardListAction 클래스로 이동
+			action = new BoardListAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				System.out.println("BoardFrontController - BoardList.bo - 오류" + e.getMessage());
+			}
+		}else if (command.equals("/BoardDeleteForm.bo")) {
 			forward = new ActionForward();
 			forward.setPath("/board/board_delete.jsp");
 		} else if (command.equals("/BoardDeletePro.bo")) {
