@@ -40,11 +40,12 @@ public class MemberLoginProAction implements Action{
 			out.println("</script>");
 		} else {
 			HttpSession session = request.getSession();
+			System.out.println("로그인 완료!");
 			session.setAttribute("sId", id);
 			
 			forward = new ActionForward();
 			forward.setRedirect(true);
-			forward.setPath("BoardMain.bo");
+			forward.setPath("main.me");
 		}
 		
 		return forward;

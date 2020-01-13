@@ -20,7 +20,7 @@ public class MemberJoinProAction implements Action{
 		member.setAge(Integer.parseInt(request.getParameter("age")));
 		member.setEmail(request.getParameter("email1") + "@" + request.getParameter("email2"));
 		member.setId(request.getParameter("id"));
-		member.setPasswd(request.getParameter("passwd"));
+		member.setPasswd(request.getParameter("pass"));
 		
 		memberJoinProService memberJoinProService = new memberJoinProService();
 		boolean isRegistSuccess = memberJoinProService.registMember(member);
@@ -35,7 +35,7 @@ public class MemberJoinProAction implements Action{
 		} else {
 			forward = new ActionForward();
 			forward.setRedirect(true);
-			forward.setPath("MemberJoinResult.me");
+			forward.setPath("MemberLoginForm.me");
 		}
 		
 		

@@ -14,12 +14,12 @@ public class MemberBean {
 	 * ------------------------------------
 	 	CREATE TABLE member (
 			idx INT PRIMARY KEY AUTO_INCREMENT,
-			name VARCHAR(12) NOT NULL,
-			gender VARCHAR(1) NOT NULL,
-			age INT NOT NULL,
-			email VARCHAR(50) NOT NULL UNIQUE,
 			id VARCHAR(16) NOT NULL UNIQUE,
-			passwd VARCHAR(20) NOT NULL
+			passwd VARCHAR(20) NOT NULL,
+			name VARCHAR(12) NOT NULL,
+			age INT NOT NULL,
+			gender VARCHAR(1) NOT NULL,
+			email VARCHAR(50) NOT NULL UNIQUE
 		);
 	 */
 	private int idx;

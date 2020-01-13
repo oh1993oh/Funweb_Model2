@@ -36,12 +36,12 @@ public class MemberDAO {
 		try {
 			pstmt = con.prepareStatement(sql);
 
-			pstmt.setString(1, member.getName());
-			pstmt.setString(2, member.getGender());
-			pstmt.setInt(3, member.getAge());
-			pstmt.setString(4, member.getEmail());
-			pstmt.setString(5, member.getId());
-			pstmt.setString(6, member.getPasswd());
+			pstmt.setString(1, member.getId());
+			pstmt.setString(2, member.getPasswd());
+			pstmt.setString(3, member.getName());
+			pstmt.setInt(4, member.getAge());
+			pstmt.setString(5, member.getGender());
+			pstmt.setString(6, member.getEmail());
 
 			insertCount = pstmt.executeUpdate();
 

@@ -26,10 +26,10 @@ public class MemberFrontController extends HttpServlet {
 		Action action = null;
 		ActionForward forward = null;
 
-		if (command.equals("/LoginForm.me")) {
+		if (command.equals("/MemberLoginForm.me")) {
 			forward = new ActionForward();
-			forward.setPath("/member/member_login_form.jsp");
-		} else if (command.equals("/LoginPro.me")) {
+			forward.setPath("/member/login.jsp");
+		} else if (command.equals("/Memberloginpro.me")) {
 			action = new MemberLoginProAction();
 
 			try {
@@ -37,9 +37,12 @@ public class MemberFrontController extends HttpServlet {
 			} catch (Exception e) {
 				System.out.println("MemberFrontController - MemberLoginProAction - 오류" + e.getMessage());
 			}
+		} else if (command.equals("/main.me")) {
+			forward = new ActionForward();
+			forward.setPath("/main/main.jsp");
 		} else if (command.equals("/MemberJoinForm.me")) {
 			forward = new ActionForward();
-			forward.setPath("/member/member_join_form.jsp");
+			forward.setPath("/member/join.jsp");
 		} else if (command.equals("/LogoutPro.me")) {
 			action = new MemberLogoutProAction();
 
@@ -56,10 +59,7 @@ public class MemberFrontController extends HttpServlet {
 			} catch (Exception e) {
 				System.out.println("MemberFrontController - MemberJoinProAction - 오류" + e.getMessage());
 			}
-		} else if (command.equals("/MemberJoinResult.me")) {
-			forward = new ActionForward();
-			forward.setPath("/member/member_join_result.jsp");
-		}
+		} 
 
 		if (forward != null) {
 			if (forward.isRedirect()) {
@@ -75,12 +75,12 @@ public class MemberFrontController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		super.doGet(request, response);
+		doProcess(request, response);
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		super.doPost(request, response);
+		doProcess(request, response);
 	}
 }

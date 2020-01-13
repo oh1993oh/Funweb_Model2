@@ -15,7 +15,7 @@ public class MemberLogoutProAction implements Action{
 		session.invalidate();
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(true);
-		forward.setPath("BoardMain.bo");
+		forward.setPath("main.me");
 		
 		return forward;
 	}
