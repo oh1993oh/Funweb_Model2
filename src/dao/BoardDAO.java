@@ -76,7 +76,7 @@ public class BoardDAO {
 	}
 
 	public BoardBean selectArticle(int board_num) {
-
+		System.out.println("boardDAO - selectArticle");
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		BoardBean boardBean = null;
@@ -100,6 +100,7 @@ public class BoardDAO {
 				boardBean.setboard_readcount(rs.getInt("board_readcount"));
 				boardBean.setboard_date(rs.getDate("board_date"));
 				System.out.println(rs.getString("board_content"));
+				System.out.println("boardDAO - selectArticle2");
 			}
 
 		} catch (SQLException e) {
@@ -113,7 +114,9 @@ public class BoardDAO {
 	}
 
 	public int updateReadcount(int board_num) {
-
+		
+		System.out.println("boardDAO - updateReadcount");
+		
 		PreparedStatement pstmt = null;
 		int updateCount = 0;
 
@@ -328,7 +331,7 @@ public class BoardDAO {
 		ArrayList<CommentBean> commentList = new ArrayList<CommentBean>();
 
 		try {
-			String sql = "select user_id,comment,star,date from comment where ref_num=? order by com_num";
+			String sql = "select Member_id,comment,star,date from comment where board_num=? order by com_num";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, board_num);
 			rs = pstmt.executeQuery();
@@ -352,7 +355,7 @@ public class BoardDAO {
 		return commentList;
 	}
 
-	public int InsertComment(int ref_num, String user_id, String comment, int star) {
+	public int InsertComment(int board_num, String member_id, String comment, int star) {
 		
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -371,13 +374,13 @@ public class BoardDAO {
 			}else {
 				com_num = 1;
 			}
-			sql = "insert into comment values(?,?,?,?,now(),?)";
+			sql = "insert into comment values(?,?,?,now(),?,?)";
 			pstmt = con.prepareStatement(sql);
-			pstmt.setInt(1, com_num);
-			pstmt.setInt(2, ref_num);
-			pstmt.setString(3, user_id);
-			pstmt.setString(4, comment);
-			pstmt.setInt(5, star);
+			pstmt.setInt(1, board_num);
+			pstmt.setString(2, member_id);
+			pstmt.setString(3, comment);
+			pstmt.setInt(4, star);
+			pstmt.setInt(5, com_num);
 			insertcount = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			System.out.println("boardDAO - InsertComment - 오류"+e.getMessage());

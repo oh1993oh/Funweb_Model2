@@ -40,7 +40,7 @@ if(id==null){
 	<li><a href="main.me">HOME</a></li>
 	<li><a href="../company/welcome.html">COMPANY</a></li>
 	<li><a href="#">SOLUTIONS</a></li>
-	<li><a href="BoardMain.bo">CUSTOMER CENTER</a></li>
+	<li><a href="BoardList.bo">CUSTOMER CENTER</a></li>
 	<li><a href="#">CONTACT US</a></li>
 </ul>
 </nav>

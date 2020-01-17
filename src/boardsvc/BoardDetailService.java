@@ -3,7 +3,6 @@ package boardsvc;
 import static db.jdbcUtil.*;
 
 import java.sql.Connection;
-import java.util.ArrayList;
 
 import dao.BoardDAO;
 import vo.BoardBean;
@@ -12,7 +11,7 @@ public class BoardDetailService {
 
 	public BoardBean getArticle(int board_num) {
 		
-		Connection con = null;
+		Connection con = getConnection();
 		BoardDAO boardDAO = BoardDAO.getInstance();
 		boardDAO.setConnection(con);
 		

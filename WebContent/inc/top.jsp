@@ -18,10 +18,10 @@ if(id==null){
 <!-- 로고들어가는 곳 -->
 <nav id="top_menu">
 <ul>
-	<li><a href="../main/main.jsp">홈</a></li>
+	<li><a href="main.me">홈</a></li>
 	<li><a href="../company/welcome.jsp">자기소개</a></li>
 	<li><a href="#">솔루션</a></li>
-	<li><a href="../center/notice.jsp">자료실</a></li>
+	<li><a href="Boardlist.bo">자료실</a></li>
 	<li><a href="../notice/notice.jsp">게시판</a></li>
 </ul>
 </nav>

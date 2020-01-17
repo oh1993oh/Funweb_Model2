@@ -35,10 +35,7 @@ public class BoardFrontController extends HttpServlet {
 		ActionForward forward = null;
 
 		// 입력받은 서블릿 주소 매핑
-		if (command.equals("/BoardMain.bo")) {
-			forward = new ActionForward();
-			forward.setPath("/notice.jsp");
-		} else if (command.equals("/BoardWriteForm.bo")) {
+		 if (command.equals("/BoardWriteForm.bo")) {
 			forward = new ActionForward();
 			forward.setPath("/board/board_write.jsp");
 		} else if (command.equals("/BoardWritePro.bo")) {
