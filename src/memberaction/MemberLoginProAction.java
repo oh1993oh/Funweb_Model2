@@ -41,7 +41,7 @@ public class MemberLoginProAction implements Action{
 		} else {
 			HttpSession session = request.getSession();
 			System.out.println("로그인 완료!");
-			session.setAttribute("sId", id);
+			session.setAttribute("id", id);
 			
 			forward = new ActionForward();
 			forward.setRedirect(true);

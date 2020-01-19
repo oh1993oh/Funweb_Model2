@@ -1,5 +1,10 @@
+<%@page import="vo.MemberBean"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%
+	String id = (String)session.getAttribute("id");
+
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,12 +21,12 @@ var emailcheckResult = false, numbercheckResult = false;
 
 function changeDomain(domain) {
 	// SELECT-OPTION 태그에서 선택된 항목을 email2 필드에 표시
-	document.joinForm.email2.value = domain.value;
+	document.updateForm.email2.value = domain.value;
 }
 function CheckSubmit() {
 	if (document.joinForm.email1.value == ""
 			&& document.joinForm.email2.value == "") {
-		document.joinForm.email1.focus();
+		document.updateForm.email1.focus();
 		return;
 	} else {
 		emailcheckResult = true;
@@ -42,27 +47,23 @@ function CheckSubmit() {
 		<!-- 왼쪽메뉴 -->
 		<nav id="sub_menu">
 			<ul>
-				<li><a href="#">Join us</a></li>
+				<li><a href="#">Update us</a></li>
 				<li><a href="#">Privacy policy</a></li>
 			</ul>
 		</nav>
 		<!-- 왼쪽메뉴 -->
 		<!-- 본문내용 -->
 		<article>
-			<h1>Join Us</h1>
-			<form action="MemberJoinPro.me" id="join" method="post" name="joinForm">
+			<h1>Update Us</h1>
+			<form action="MemberUpdatePro.me" id="join" method="post" name="updateForm">
 				<fieldset>
 					<legend>Basic Info</legend>
 					<label>User ID</label> <input type="text" name="id" class="id"
-						required="required" size="20" placeholder="4-16자리 영문자,숫자 조합"
-						onkeyup="checkId(this)"><br> <span id="checkIdResult">
+						value=<%=id %>><br> <span id="checkIdResult">
 						<!-- 자바스크립트에 의해 메세지가 표시될 공간 -->
 					</span> <label>Password</label> <input type="password" name="pass"
-						required="required" size="20" placeholder="8-20자리 영문자,숫자,특수문자 조합"
-						onkeyup="checkPasswd(this)"><br> <span
-						id="checkPasswdResult">
-						<!-- 자바스크립트에 의해 메세지가 표시될 공간 -->
-					</span> <label>Name</label> <input type="text" name="name"
+						required="required" size="20"><br> 
+						<label>Name</label> <input type="text" name="name"
 						required="required" size="20"><br> 
 					 <label>Age</label> <input type="text" name="age"
 						required="required" size="10"><br> <label>E-mail</label>
@@ -73,9 +74,6 @@ function CheckSubmit() {
 						<option value="naver.com">naver.com</option>
 						<option value="nate.com">nate.com</option>
 					</select><br>
-					<label>Gender</label>
-					<input type="radio" name="gender" value="남">남 <input
-						type="radio" name="gender" value="여">여<br>
 					<br>
 
 				</fieldset>

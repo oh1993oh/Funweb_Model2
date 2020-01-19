@@ -9,7 +9,7 @@ String id=(String)session.getAttribute("id");
 if(id==null){
 	%><div id="login"><a href="MemberLoginForm.me">로그인</a> | <a href="MemberJoinForm.me">회원가입</a></div><%
 }else{
-	%><div id="login"><%=id %>님 | <a href="LogoutPro.me">logout</a> | <a href="../member/updateForm.jsp">회원정보수정</a> | <a href="../member/deleteForm.jsp">회원탈퇴</a></div><%
+	%><div id="login"><%=id %>님 | <a href="LogoutPro.me">logout</a> | <a href="MemberCheckPro.me">회원정보수정</a> | <a href="MemberCheckPro.me">회원탈퇴</a></div><%
 }
 %>
 <div class="clear"></div>
@@ -21,7 +21,7 @@ if(id==null){
 	<li><a href="main.me">홈</a></li>
 	<li><a href="../company/welcome.jsp">자기소개</a></li>
 	<li><a href="#">솔루션</a></li>
-	<li><a href="Boardlist.bo">자료실</a></li>
+	<li><a href="BoardList.bo">자료실</a></li>
 	<li><a href="../notice/notice.jsp">게시판</a></li>
 </ul>
 </nav>

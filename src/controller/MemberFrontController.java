@@ -10,9 +10,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import memberaction.Action;
+import memberaction.MemberCheckProAction;
 import memberaction.MemberJoinProAction;
 import memberaction.MemberLoginProAction;
 import memberaction.MemberLogoutProAction;
+import memberaction.MemberUpdateProAction;
 import vo.ActionForward;
 
 @WebServlet("*.me")
@@ -59,7 +61,27 @@ public class MemberFrontController extends HttpServlet {
 			} catch (Exception e) {
 				System.out.println("MemberFrontController - MemberJoinProAction - 오류" + e.getMessage());
 			}
-		} 
+		}else if (command.equals("/MemberUpdateForm.me")) {
+			forward = new ActionForward();
+			forward.setPath("/member/memberUpdateForm.jsp");
+
+		} else if(command.equals("/MemberUpdatePro.me")) {
+			action = new MemberUpdateProAction();
+			
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				System.out.println("MemberUpdatePro.me - 오류"+e.getMessage());
+			}
+		}else if(command.equals("/MemberCheckPro.me")) {
+			action = new MemberCheckProAction();
+			
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				System.out.println("MemberCheckPro.me - 오류"+e.getMessage());
+			}
+		}
 
 		if (forward != null) {
 			if (forward.isRedirect()) {
