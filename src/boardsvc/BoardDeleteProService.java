@@ -10,6 +10,8 @@ public class BoardDeleteProService {
 
 	public boolean isAriticleWriter(int board_num, String board_pass) {
 		
+		System.out.println("BoardDeleteProService - isAriticleWriter");
+		
 		Connection con = getConnection();
 		BoardDAO boardDAO = BoardDAO.getInstance();
 		boardDAO.setConnection(con);
@@ -22,6 +24,8 @@ public class BoardDeleteProService {
 	}
 
 	public boolean removeArticle(int board_num) {
+		
+		System.out.println("BoardDeleteProService - removeArticle");
 		
 		Connection con = getConnection();
 		BoardDAO boardDAO = BoardDAO.getInstance();

@@ -69,7 +69,7 @@
 		<input type = "button" value = "답변" onclick="location.href='BoardReplyForm.bo?board_num<%=article.getboard_num() %>&page=<%=nowPage %>'">
 		<input type = "button" value = "수정" onclick="location.href='BoardModifyForm.bo?board_num<%=article.getboard_num() %>&page=<%=nowPage %>'">
 		<input type = "button" value = "삭제" onclick="location.href='BoardDeleteForm.bo?board_num<%=article.getboard_num() %>&page=<%=nowPage %>'">
-		<input type = "button" value = "목록" onclick="location.href='Boardlistbo?page=<%=nowPage %>'">
+		<input type = "button" value = "목록" onclick="location.href='BoardList.bo?page=<%=nowPage %>'">
 	</section>
 	<section id = "commandList">
 		<ul>

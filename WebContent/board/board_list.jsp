@@ -7,8 +7,8 @@
 	// 전달받은 request 객체로부터 데이터 가져오기
 	// "pageInfo" 객체와 "articleList" 객체를 request 객체로부터 꺼내서 저장
 	// "pageInfo" 객체로부터 페이지 관련 값들을 꺼내서 변수에 저장
-	ArrayList<BoardBean> articleList = (ArrayList<BoardBean>)request.getAttribute("articleList");
-	PageInfo pageInfo = (PageInfo)request.getAttribute("pageInfo");
+	ArrayList<BoardBean> articleList = (ArrayList<BoardBean>) request.getAttribute("articleList");
+	PageInfo pageInfo = (PageInfo) request.getAttribute("pageInfo");
 	int nowPage = pageInfo.getPage();
 	int maxPage = pageInfo.getMaxPage();
 	int startPage = pageInfo.getStartPage();
@@ -27,26 +27,7 @@
 <body>
 	<div id="wrap">
 		<!-- 헤더들어가는 곳 -->
-		<header>
-			<div id="login">
-				<a href="MemberLoginForm.me">login</a> | <a href="MemberJoinForm.me">join</a>
-			</div>
-			<div class="clear"></div>
-			<!-- 로고들어가는 곳 -->
-			<div id="logo">
-				<img src="./images/logo.gif" width="265" height="62" alt="Fun Web">
-			</div>
-			<!-- 로고들어가는 곳 -->
-			<nav id="top_menu">
-				<ul>
-					<li><a href="main.me">HOME</a></li>
-					<li><a href="../company/welcome.html">COMPANY</a></li>
-					<li><a href="#">SOLUTIONS</a></li>
-					<li><a href="Boardlist.bo">CUSTOMER CENTER</a></li>
-					<li><a href="#">CONTACT US</a></li>
-				</ul>
-			</nav>
-		</header>
+		<jsp:include page="../inc/header.jsp" />
 		<!-- 헤더들어가는 곳 -->
 
 		<!-- 본문들어가는 곳 -->
@@ -77,8 +58,8 @@
 					<th class="tread">Read</th>
 				</tr>
 				<%
-			if(articleList != null && listCount > 0) {
-			%>
+					if (articleList != null && listCount > 0) {
+				%>
 				<tr id="tr_top">
 					<td width="100px">번호</td>
 					<td>제목</td>
@@ -87,26 +68,41 @@
 					<td width="100px">조회수</td>
 				</tr>
 				<%
-				for(int i = 0; i < articleList.size(); i++) {
+					for (int i = 0; i < articleList.size(); i++) {
 				%>
 				<tr>
-					<td align="center"><%=articleList.get(i).getboard_num() %></td>
+					<td align="center"><%=articleList.get(i).getboard_num()%></td>
 					<td>
-						<%if(articleList.get(i).getboard_re_lev() != 0) { %> 
-						<%for(int j = 0; j <= articleList.get(i).getboard_re_lev() * 2; j++) { %>
-						&nbsp; <%} %> ▶ <%} %> &nbsp;&nbsp; 
-						<a href="BoardDetail.bo?board_num=<%=articleList.get(i).getboard_num() %>&page=<%=nowPage %>">
-							<%=articleList.get(i).getboard_subject() %>
+						<%
+							if (articleList.get(i).getboard_re_lev() != 0) {
+						%> <%
+ 	for (int j = 0; j <= articleList.get(i).getboard_re_lev() * 2; j++) {
+ %>
+						&nbsp; <%
+ 	}
+ %> ▶ <%
+ 	}
+ %> &nbsp;&nbsp; <a
+						href="BoardDetail.bo?board_num=<%=articleList.get(i).getboard_num()%>&page=<%=nowPage%>">
+							<%=articleList.get(i).getboard_subject()%>
 					</a>
 					</td>
-					<td align="center"><%=articleList.get(i).getboard_name() %></td>
-					<td align="center"><%=articleList.get(i).getboard_date() %></td>
-					<td align="center"><%=articleList.get(i).getboard_readcount() %></td>
+					<td align="center"><%=articleList.get(i).getboard_name()%></td>
+					<td align="center"><%=articleList.get(i).getboard_date()%></td>
+					<td align="center"><%=articleList.get(i).getboard_readcount()%></td>
 				</tr>
 
-				<%}%>
-			<%} %>
+				<%
+					}
+				%>
+				<%
+					}
+				%>
 			</table>
+			<section class="btn">
+				<input type="button" value="글쓰기"
+					onclick="location.href='BoardWriteForm.bo'" />
+			</section>
 			<div id="table_search">
 				<input type="text" name="search" class="input_box"> <input
 					type="button" value="search" class="btn">

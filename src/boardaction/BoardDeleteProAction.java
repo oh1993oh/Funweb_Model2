@@ -13,6 +13,8 @@ public class BoardDeleteProAction implements Action{
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
+		System.out.println("BoardDeleteProAction");
+		
 		ActionForward forward = null;
 		
 		int board_num = Integer.parseInt(request.getParameter("board_num"));

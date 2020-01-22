@@ -115,6 +115,8 @@ public class BoardFrontController extends HttpServlet {
 				System.out.println("BoardFrontController - InsertComment.bo - 오류" + e.getMessage());
 			}
 		}
+		 
+		 
 		
 		if(forward != null) {
 			if(forward.isRedirect()) {

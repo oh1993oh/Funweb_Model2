@@ -100,7 +100,6 @@ public class BoardDAO {
 				boardBean.setboard_readcount(rs.getInt("board_readcount"));
 				boardBean.setboard_date(rs.getDate("board_date"));
 				System.out.println(rs.getString("board_content"));
-				System.out.println("boardDAO - selectArticle2");
 			}
 
 		} catch (SQLException e) {
@@ -136,7 +135,9 @@ public class BoardDAO {
 	}
 
 	public int selectListCount() {
-
+		
+		System.out.println("BoardDAO - selectListCount");
+		
 		int listCount = 0;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -160,7 +161,9 @@ public class BoardDAO {
 	}
 
 	public ArrayList<BoardBean> selectArticleList(int page, int limit) {
-
+		
+		System.out.println("BoardDAO - selectArticleList");
+		
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		ArrayList<BoardBean> articleList = new ArrayList<BoardBean>();
@@ -199,7 +202,9 @@ public class BoardDAO {
 	}
 
 	public int updateArticle(BoardBean article) {
-
+		
+		System.out.println("BoardDAO - updateArticle");
+		
 		PreparedStatement pstmt = null;
 		int updateCount = 0;
 
@@ -222,7 +227,9 @@ public class BoardDAO {
 	}
 
 	public int insertReplyArticle(BoardBean article) {
-
+		
+		System.out.println("BoardDAO - insertReplyArticle");
+		
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 
@@ -281,7 +288,9 @@ public class BoardDAO {
 	}
 
 	public int insertArticle(BoardBean boardBean) {
-
+		
+		System.out.println("BoardDAO - insertArticle");
+		
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 
@@ -326,6 +335,8 @@ public class BoardDAO {
 
 	public ArrayList<CommentBean> getCommentList(int board_num) {
 		
+		System.out.println("BoardDAO - getCommentList");
+		
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		ArrayList<CommentBean> commentList = new ArrayList<CommentBean>();
@@ -346,7 +357,7 @@ public class BoardDAO {
 				commentList.add(commentBean);
 			}
 		} catch (SQLException e) {
-			System.out.println("BoardDAO -getCommentList - 오류"+e.getMessage());
+			System.out.println("BoardDAO -getCommentList - 오류" + e.getMessage());
 		}finally {
 			close(rs);
 			close(pstmt);
@@ -356,6 +367,8 @@ public class BoardDAO {
 	}
 
 	public int InsertComment(int board_num, String member_id, String comment, int star) {
+		
+		System.out.println("BoardDAO - InsertComment");
 		
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
